@@ -56,8 +56,6 @@ for line in lines_sudoku:
     else:
         sudokus[-1].append(list(sub('[\r\n]', '', line)))
 
-sys.exit(0)
-
 total = 0
 i = 0
 solved_sudokus = []
@@ -66,7 +64,7 @@ for sudoku in sudokus:
     solved_sudokus.append(s)
     if any('0' in i for i in s):
         pprint(s)
-    total += s[0][0:3]
+    total += int(''.join(s[0][0:3]))
     print i
     i += 1
 print total
